@@ -104,6 +104,7 @@ local function get_http_request(link)
       ['X-Api-Key'] = runtime.conf["API_KEY"],
       ['User-Agent'] = runtime.userAgent
     },
+    ssl_verify = runtime.conf['SSL_VERIFY'] == "true"
   })
   httpc:close()
   return res, err
